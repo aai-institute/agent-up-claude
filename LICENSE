@@ -1,0 +1,18 @@
+Copyright (c) 2026 appliedAI Institute for Europe gGmbH
+
+This repository has three parts, each under its own license:
+
+1. Text and instructions: SKILL.md, the files in skills/agent-up-coach/references/ and README.md
+   are licensed under Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0),
+   like the Agent Up content library. Full text: LICENSES/CC-BY-SA-4.0.txt
+
+2. Code: the scripts in skills/agent-up-coach/scripts/ and the page template
+   skills/agent-up-coach/assets/lesson-template.html are licensed under the Apache License 2.0.
+   Full text: LICENSES/Apache-2.0.txt
+
+3. Logos: the images in skills/agent-up-coach/assets/brand/ are trademarks of the appliedAI Institute
+   for Europe gGmbH. They are not covered by either license above and may not be reused
+   without permission.
+
+The fonts Montserrat and Azeret Mono are not part of this repository. The page loads them from Google Fonts
+under the SIL Open Font License.

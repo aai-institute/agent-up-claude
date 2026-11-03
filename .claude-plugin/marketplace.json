@@ -1,0 +1,12 @@
+{
+  "name": "agent-up-claude-marketplace",
+  "owner": {
+    "name": "appliedAI Institute for Europe"
+  },
+  "plugins": [
+    {
+      "name": "agent-up-coach",
+      "source": "."
+    }
+  ]
+}
