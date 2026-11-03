@@ -6,7 +6,7 @@ The missions are not part of this plugin. They live in the public [Agent Up cont
 
 ## Install
 
-**Claude (chat and Cowork):** download `agent-up-claude.zip` from the Agent Up website, then in Claude open Settings, Plugins, and add the ZIP.
+**Claude (chat and Cowork):** download `agent-up-claude.zip` from the Agent Up website or from the [latest release on GitHub](https://github.com/aai-institute/agent-up-claude/releases/latest), then in Claude open Settings, Plugins, and add the ZIP.
 
 **Claude Code:**
 
@@ -57,9 +57,9 @@ First public release.
 - First contact is a short mini form, and the coach adapts the examples, wording and steps to the learner's work and environment without changing what the mission teaches.
 - The mission page ends with a short summary of the mission, a **Save asset to portfolio** button and a button back to the Agent Up website. Missions without an asset have no portfolio piece and only the back button. The coach also saves the piece (the file, a working file if any, `card.md` and `portfolio.json`) in a local folder named Agent-Up Portfolio when it can write files.
 
-## Status
+## Configuration
 
-In testing. Set `AGENTUP_SITE_URL` when building a page if the "Back to Agent Up Website" button should point to another address (for example a local test site).
+By default the "Back to Agent Up Website" button opens the Agent Up website. Set the environment variable `AGENTUP_SITE_URL` when building a page to point it to another address, for example a local test site.
 
 ## License
 
