@@ -20,7 +20,7 @@ The missions are not part of this plugin. They live in the public [Agent Up cont
 1. On the Agent Up website the learner copies the mission prompt. It holds a link to the mission file in the content library.
 2. The learner pastes it into a new Claude chat. Typing "Start mission 2" also works, and missions can be done in any order.
 3. The coach downloads the mission, asks one short mini form (work and goal, Claude chat / Cowork or terminal / Claude Code, and the topic level), adapts the working example to the learner's work, builds the mission page and coaches in the chat.
-4. At the end, if the mission built an asset, the learner saves it to their portfolio (one file with the mission's reusable template and their own final version) and goes back to the Agent Up website.
+4. At the end, if the mission built a portfolio piece, the learner saves it to their portfolio (one file with the mission's reusable template and their own final version) and goes back to the Agent Up website.
 
 All missions should be done in the same chat, because a new chat starts without memory of the earlier ones. The coach answers in the learner's language: it uses the library's translation when there is one, and translates the mission itself when there is not.
 
@@ -44,7 +44,7 @@ skills/
     └── scripts/
         ├── fetch_mission.py    # downloads a mission from the content library
         ├── build.py            # mission file to mission page; --dump-ui and --ui for other languages
-        └── set_state.py        # small live updates to the page (final asset, position)
+        └── set_state.py        # small live updates to the page (final portfolio piece, position)
 ```
 
 ## Version 1.0.0
@@ -55,7 +55,7 @@ First public release.
 - Missions and translations are not in the plugin: `fetch_mission.py` downloads them from the content library, by link, by mission number or by listing the topics.
 - Any language: the library's translation is used when it exists, otherwise the coach translates the mission, and the page's buttons and labels are translated through `build.py --dump-ui` and `--ui`.
 - First contact is a short mini form, and the coach adapts the examples, wording and steps to the learner's work and environment without changing what the mission teaches.
-- The mission page ends with a short summary of the mission, a **Save asset to portfolio** button and a button back to the Agent Up website. Missions without an asset have no portfolio piece and only the back button. The coach also saves the piece (the file, a working file if any, `card.md` and `portfolio.json`) in a local folder named Agent-Up Portfolio when it can write files.
+- The mission page ends with a short summary of the mission, a **Save portfolio piece** button and a button back to the Agent Up website. Missions that build nothing to keep have no save button and only the back button. The coach also saves the piece (the file, a working file if any, `card.md` and `portfolio.json`) in a local folder named Agent-Up Portfolio when it can write files.
 
 ## Configuration
 

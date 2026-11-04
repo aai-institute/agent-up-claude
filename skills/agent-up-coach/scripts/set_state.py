@@ -3,7 +3,7 @@
 """Update one live-state value in a built lesson page (no rebuild).
 
 Usage:  python3 set_state.py <page.html> <key> <value>
-Keys:   part:<step> (last step = final asset: copy button, download)   at (e.g. "3.2")
+Keys:   part:<step> (last step = final portfolio piece: copy button, download)   at (e.g. "3.2")
 Only the matching line inside <script id="agentup-state"> changes.
 """
 import json, re, sys

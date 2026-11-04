@@ -22,7 +22,7 @@ python3 "${CLAUDE_SKILL_DIR}/scripts/build.py" "<mission path printed by fetch_m
 ```
 python3 "${CLAUDE_SKILL_DIR}/scripts/set_state.py" <page.html> <key> "<value>"
 ```
-- `part:<last step>`: the learner's full final asset, exactly as they wrote it, once the last step is final (and again if the test fixes it). It enables the test's copy button and the **Save asset to portfolio** button (one file: the mission's reusable template and the learner's final version). Set only this key and leave the other `part:` keys empty.
+- `part:<last step>`: the learner's full final portfolio piece, exactly as they wrote it, once the last step is final (and again if the test fixes it). It enables the test's copy button and the **Save portfolio piece** button (one file: the mission's reusable template and the learner's final version). Set only this key and leave the other `part:` keys empty.
 - `at`: section.step to reopen at, e.g. `"4.1"`, when you move the learner on.
 - Without Python, edit that one line in the `agentup-state` block with your file-edit tool (escape `"` and line breaks).
 - The page shows updates when it reloads; if it doesn't refresh by itself, tell the learner to reopen it (their place is kept).
