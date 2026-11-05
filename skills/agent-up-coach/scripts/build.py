@@ -269,7 +269,7 @@ def classic(d, ui):
             "your_mission": {"imagine": d["context"], "mission": d["task"] + " " + d["outcome"], "prereqs": d["need"] + d["already"], "next": T("next_start")},
             "concept": {"heading": d["concept"]["heading"], "before": d["concept"]["lead"], "body": d["concept"]["close"],
                         "toggles": d["concept"].get("toggles") or [],
-                        "check": {k: v for k, v in (d["concept"].get("check") or {}).items() if k in ("question", "options")} or None,
+                        "check": {k: v for k, v in (d["concept"].get("check") or {}).items() if k in ("question", "options", "answer", "why")} or None,
                         "visual": {"type": "cards", "items": d["concept"]["cards"]}, "image": d["concept"].get("image"), "next": T("next_build")},
             "artefact": {"name": d["meta"]["artefact"], "filename": d["meta"]["file"] or "artefact.md", "code": code, "parts": parts if d["meta"]["kind"] != "none" else [],
                          "template": {"name": d.get("template", {}).get("name", ""), "text": d.get("template", {}).get("text", ""), "how": ""}},
@@ -357,7 +357,10 @@ def main():
     summary = []
     if o.example:
         ex = json.load(open(o.example, encoding="utf-8"))
-        summary = [s for s in (ex.pop("summary", None) or []) if isinstance(s, str) and s.strip()]
+        sm = ex.pop("summary", None) or []
+        if isinstance(sm, str):
+            sm = [re.sub(r"^\s*[-*\u2022]\s+", "", l).strip() for l in sm.splitlines()]
+        summary = [s for s in sm if isinstance(s, str) and s.strip()]
         if ex.get("why"):
             d["context"] = ex.pop("why")
         d["scenario"] = dict(d.get("scenario") or {}, **ex)

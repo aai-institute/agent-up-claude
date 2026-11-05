@@ -1,7 +1,7 @@
 {
   "name": "agent-up-coach",
   "description": "Agent Up's mission coach — the Claude Code plugin half of appliedAI's agent-native Learning Journey product. Runs one hands-on, 20-30 minute mission at a time and produces a personalized mission page.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "appliedAI Institute for Europe"
   }

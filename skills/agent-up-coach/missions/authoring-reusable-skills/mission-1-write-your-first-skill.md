@@ -61,7 +61,7 @@ Question: You have three skills installed. Which part does the AI read to decide
 - C: The examples at the end of the file
 - D: All three, every time
 Answer: B
-Why: Only the header, a few lines per skill, is always read. The instructions and examples load after the AI has chosen the skill from its description, so D would fill the context with every skill at once.
+Why: Only the header, a few lines per skill, is always read. The instructions and examples load after the AI has chosen the skill from its description.
 
 ## Working example
 Situation: After each **team meeting**, you turn your notes into a **follow-up email**.

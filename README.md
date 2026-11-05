@@ -6,23 +6,34 @@ The missions are part of this plugin: they ship inside it, in English and German
 
 ## Install
 
-**Claude (chat and Cowork):** download `agent-up-claude.zip` from the Agent Up website or from the [latest release on GitHub](https://github.com/aai-institute/agent-up-claude/releases/latest), then in Claude open Settings, Plugins, and add the ZIP.
+**Claude (chat and Cowork), from the marketplace (recommended):** in Settings, Plugins, add the marketplace with this address:
+
+```
+https://github.com/aai-institute/agent-up-claude
+```
+
+Then install `agent-up-coach` from it. Updates arrive when a new version is released, and Cowork can sync them automatically. Use the full address: the short form `aai-institute/agent-up-claude` can fail where SSH keys are not set up.
+
+If adding the marketplace fails, your organization may restrict marketplaces: ask your administrator to allow `https://github.com/aai-institute/agent-up-claude`.
+
+**Claude (chat and Cowork), from the ZIP (fallback):** download `agent-up-claude.zip` from the Agent Up website or from the [latest release on GitHub](https://github.com/aai-institute/agent-up-claude/releases/latest), then in Settings, Plugins, upload the ZIP. A ZIP does not update itself: download the new one when there is a new version.
 
 **Claude Code:**
 
 ```
-/plugin marketplace add aai-institute/agent-up-claude
+/plugin marketplace add https://github.com/aai-institute/agent-up-claude
 /plugin install agent-up-coach@agent-up-claude-marketplace
 ```
 
 ## Starting a mission
 
+0. Optional but recommended: connect a folder named **Agent-Up Portfolio** to the chat first. The coach keeps your portfolio pieces and a small progress note there, so a new chat knows which missions you did.
 1. On the Agent Up website the learner copies the mission prompt. It names the skill, the topic, the mission and the language, for example: *Use the agent-up-coach skill to start Agent Up mission 1, "Write your first skill", from the topic "Authoring Reusable Skills" (authoring-reusable-skills). Answer in English.*
 2. The learner pastes it into a new Claude chat. Typing "Start mission 2" also works, and missions can be done in any order.
 3. The coach loads the mission from the plugin, asks one short mini form (work and goal, Claude chat / Cowork or terminal / Claude Code, and the topic level), adapts the working example to the learner's work, builds the mission page and coaches in the chat.
 4. At the end, if the mission built a portfolio piece, the learner saves it to their portfolio (one file with the mission's reusable template and their own final version) and goes back to the Agent Up website.
 
-All missions should be done in the same chat, because a new chat starts without memory of the earlier ones. The coach answers in the learner's language: it uses the translation in the plugin when there is one, and translates the mission itself when there is not.
+With the Agent-Up Portfolio folder connected, a new chat sees which missions you started or finished and does not ask again for your language, tool and level. Without it, do all missions in the same chat, because a new chat starts without memory of the earlier ones. The coach answers in the learner's language: it uses the translation in the plugin when there is one, and translates the mission itself when there is not.
 
 ## Structure
 
@@ -37,15 +48,25 @@ skills/
     ├── translations/           # <lang>/<topic>/: the same missions in German
     ├── references/
     │   ├── page.md             # how to build and update the mission page
+    │   ├── progress.md         # the Agent-Up Portfolio folder and the progress note
     │   └── saving.md           # end of mission: the portfolio piece and the Agent-Up Portfolio folder
     ├── assets/
     │   ├── lesson-template.html   # the mission page (interface texts for English, Spanish and German built in)
     │   └── brand/                 # the two logos used by the page
     └── scripts/
         ├── load_mission.py     # copies a mission from the plugin into a scratch folder, by topic, number and language, or lists them
+        ├── progress.py         # reads and updates progress.json in the Agent-Up Portfolio folder
         ├── build.py            # mission file to mission page; --dump-ui and --ui for other languages
         └── set_state.py        # small live updates to the page (final portfolio piece, position)
 ```
+
+## Version 1.0.2
+
+- The "Check your understanding" question in the mission page is now clickable: the learner picks an answer and gets feedback for right and wrong.
+- The coach says how the learner's draft skill is delivered as a download before the Test step, and the instructions state the closure position and the last step's state key.
+- The `summary` of the page is a short list of 2 to 4 points; `build.py` also accepts a bullet text.
+- Progress: the coach offers to set up a local folder named **Agent-Up Portfolio**, with the reason. It holds the portfolio pieces (one subfolder per mission) and a small `progress.json` (language, tool, topic level, missions started or finished). A new chat reads it, welcomes the learner back and skips questions already answered. It holds no work content and never leaves the learner's computer. New: `references/progress.md` and `scripts/progress.py`.
+- The install section starts with the marketplace and the full address.
 
 ## Version 1.0.1
 
