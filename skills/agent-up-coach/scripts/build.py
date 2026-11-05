@@ -10,8 +10,8 @@ with tags is left out for the other tools. Tools: claude-app (default), claude-c
 With --level, [guided], [standard] or [fast-track] tags work the same way (e.g. `### Go further [fast-track]`).
 With --lang, translations/<lang>/<topic>/<same file name> is used when it exists (page UI in en, es or de):
 its frontmatter texts replace the English ones, and its sections replace the English page when it has any.
-With --content <folder>, missions/ and translations/ are read from that folder (same layout as the content library) instead of
-the skill folder: the coach downloads the mission files there. With --ui <file.json>, its texts replace the page's built-in
+With --content <folder>, missions/ and translations/ are read from that folder (same layout as the skill folder) instead of
+the skill folder: the coach copies the mission files there with load_mission.py. With --ui <file.json>, its texts replace the page's built-in
 interface texts, so the page can be shown in any language. --dump-ui prints the English interface texts as JSON (the list to translate).
 """
 import sys, re, json, os, base64, time, argparse, shutil
