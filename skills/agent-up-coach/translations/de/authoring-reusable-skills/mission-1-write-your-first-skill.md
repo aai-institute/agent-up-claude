@@ -61,7 +61,7 @@ Question: Du hast drei Skills installiert. Welchen Teil liest die KI, um zu ents
 - C: Die Beispiele am Ende der Datei
 - D: Alle drei, jedes Mal
 Answer: B
-Why: Nur der Skill-Kopf, wenige Zeilen pro Skill, wird immer gelesen. Anweisungen und Beispiele laden erst, nachdem die KI den Skill anhand seiner Beschreibung gewählt hat, und bei D wäre der Kontext mit allen Skills auf einmal gefüllt.
+Why: Nur der Skill-Kopf, wenige Zeilen pro Skill, wird immer gelesen. Anweisungen und Beispiele laden erst, nachdem die KI den Skill anhand seiner Beschreibung gewählt hat.
 
 ## Working example
 Situation: Nach jedem **Team-Meeting** machst du aus deinen Notizen eine **Follow-up-Mail**.
