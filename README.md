@@ -60,6 +60,10 @@ skills/
         └── set_state.py        # small live updates to the page (final portfolio piece, position)
 ```
 
+## Version 1.0.3
+
+- The "Back to Agent Up Website" button on the mission page now opens the learner's path page, <https://aai-institute.github.io/frontier-ai-academy/path>, instead of the home page.
+
 ## Version 1.0.2
 
 - The "Check your understanding" question in the mission page is now clickable: the learner picks an answer and gets feedback for right and wrong.
@@ -89,7 +93,7 @@ First public release.
 
 ## Configuration
 
-By default the "Back to Agent Up Website" button opens the Agent Up website, <https://aai-institute.github.io/frontier-ai-academy/>. Set the environment variable `AGENTUP_SITE_URL` when building a page to point it to another address, for example a local test site.
+By default the "Back to Agent Up Website" button opens the Agent Up website, <https://aai-institute.github.io/frontier-ai-academy/path>. Set the environment variable `AGENTUP_SITE_URL` when building a page to point it to another address, for example a local test site.
 
 ## License
 
